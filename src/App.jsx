@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import './App.css'
+import Trivia from './Trivia'
 
 const questions = [
-"What year did the bombs drop?",
+{question:"What year did the bombs drop?", optionOne:"2075", optionTwo:"2080", optionThree:"2077", optionFour:"2100"},
 "What is arguably the most iconic quote from Fallout?",  
 "What is the New common Currency used in fallout?",  
 "What is the G.O.A.T.?",
@@ -32,7 +33,7 @@ const questions = [
 "What beverage was more popular in the west than Nuka-Cola?"
 ]
 
-const answers = [
+const correctAnswers = [
   "2077",
   "War Never Changes",
   "Caps",
@@ -76,10 +77,14 @@ function App() {
       <div className='trivia-field'>
         <button>Last Question</button>
         <div className='card-container'>
-          {/* Card Front */}
+          {/* Card Front
           <div>"What year did the bombs drop?"</div>
-          {/* Card Back */}
-          <div>"2077"</div>
+          <button className='answer-button'>2075</button>
+          <button className='answer-button'>2080</button>
+          <button className='answer-button'>2077</button>
+          <button className='answer-button'>2100</button> */}
+          {/* Card Back
+          <div>"2077"</div> */}
         </div>
         <button>Next Question</button>
       </div>

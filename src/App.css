@@ -1,0 +1,21 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+.trivia-field {
+  display: flex;
+  flex-direction: row;
+}
+
+.card-container {
+  background-color: blue;
+}
+
+button {
+  background-color: yellow;
+  color: black;
+}

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import Trivia from './Trivia'
+import Trivia from './Components/Trivia'
 
 const questions = [
 {question:"What year did the bombs drop?", optionOne:"2075", optionTwo:"2080", optionThree:"2077", optionFour:"2100"},
@@ -74,20 +74,25 @@ function App() {
         <h1>Fallout Trivia</h1>
         <p>Do you know what makes you S.P.E.C.I.A.L.?</p>
       </div>
-      <div className='trivia-field'>
+      <Trivia />
+      {/* <div className='triviaField'>
         <button>Last Question</button>
-        <div className='card-container'>
-          {/* Card Front
-          <div>"What year did the bombs drop?"</div>
-          <button className='answer-button'>2075</button>
-          <button className='answer-button'>2080</button>
-          <button className='answer-button'>2077</button>
-          <button className='answer-button'>2100</button> */}
-          {/* Card Back
-          <div>"2077"</div> */}
+        <div className='cardContainer'>
+          <div className='card'> */}
+            {/* Card Front */}
+            {/* <div className='cardTop'>"What year did the bombs drop?"</div>
+            <div className='cardBottom'>
+              <button className='answerButton'>2075</button>
+              <button className='answerButton'>2080</button>
+              <button className='answerButton'>2077</button>
+              <button className='answerButton'>2100</button>
+            </div> */}
+            {/* Card Back */}
+            {/* <div>"2077"</div>
+          </div>
         </div>
         <button>Next Question</button>
-      </div>
+      </div> */}
     </>
   )
 }

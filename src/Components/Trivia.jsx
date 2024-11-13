@@ -1,4 +1,5 @@
 import { useState } from "react";
+import answerButton from "./Answers";
 
 function Trivia({question, optionOne, OptionTwo, optionThree, optionFour}){
      
@@ -10,27 +11,30 @@ function Trivia({question, optionOne, OptionTwo, optionThree, optionFour}){
     }
 
     return (
-        <div onClick={()=>{handleClick()}}>
+        <div 
+        onClick={()=>{handleClick()}}
+        className="cardContainer">
             {/* Card Front */}
             {!flipped &&
                 <div className="card">
                     <div className="cardFront">
-                        <div className="question">"What year did the bombs drop?"</div>
-                        <div className="options">
-                            <button className='answer-button'>2075</button>
+                        <div className="cardTop">"What year did the bombs drop?"</div>
+                        <div className="cardBottom">
+                            <answerButton />
+                            {/* <button className='answer-button'>2075</button>
                             <button className='answer-button'>2080</button>
                             <button className='answer-button'>2077</button>
-                            <button className='answer-button'>2100</button>
+                            <button className='answer-button'>2100</button> */}
                         </div>
                     </div>
-            }
-                    {/* Card Back */}
-                    {flipped &&
-                    <div className="cardBack">
-                    <h2>"2077"</h2>
-                    </div>
                 </div>
-                    }
+            }
+                {/* Card Back */}
+                {flipped &&
+                <div className="cardBack">
+                <h2>"2077"</h2>
+                </div>
+                }
         </div>
     )
 }

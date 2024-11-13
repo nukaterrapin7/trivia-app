@@ -6,13 +6,27 @@
 }
 
 
-.trivia-field {
+.triviaField {
   display: flex;
   flex-direction: row;
 }
 
-.card-container {
+.cardContainer {
   background-color: blue;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* .cardTop {
+
+} */
+
+.cardBottom {
+  display: flex;
+  flex-direction: row;
 }
 
 button {

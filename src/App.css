@@ -5,20 +5,22 @@
   text-align: center;
 }
 
-
-.triviaField {
-  display: flex;
-  flex-direction: row;
-}
-
 .cardContainer {
   background-color: blue;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  row-gap: 20px;
+  padding: 20px;
+  justify-content: center;
+  border-radius: 10px;
 }
 
-.card {
+/* .card {
   display: flex;
   flex-direction: column;
-}
+  
+} */
 
 /* .cardTop {
 
@@ -26,10 +28,24 @@
 
 .cardBottom {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+}
+
+.answerButton {
+  display: flex;
+  flex-direction: column;
+  background-color: yellow;
+  color: black;
+  font-weight: bold;
+  padding: 10px;
+  margin-right: 5px;
+  border-radius: 10px;
 }
 
 button {
   background-color: yellow;
   color: black;
+  font-weight: bold;
+  padding: 10px;
+  margin-right: 5px;
 }

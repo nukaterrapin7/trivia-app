@@ -1,7 +1,6 @@
 import { useState } from "react";
-import answerButton from "./Answers";
 
-function Trivia({question, optionOne, OptionTwo, optionThree, optionFour}){
+function Trivia({question, optionA, optionB, optionC, optionD}){
      
     const [flipped, setFlipped] = useState(false)
 
@@ -18,21 +17,24 @@ function Trivia({question, optionOne, OptionTwo, optionThree, optionFour}){
             {!flipped &&
                 <div className="card">
                     <div className="cardFront">
-                        <div className="cardTop">"What year did the bombs drop?"</div>
-                        <div className="cardBottom">
-                            <answerButton />
-                            {/* <button className='answer-button'>2075</button>
-                            <button className='answer-button'>2080</button>
-                            <button className='answer-button'>2077</button>
-                            <button className='answer-button'>2100</button> */}
+                            <p>{question}</p>
+                            <button className='answerButton' choice='A'>A. {optionA}</button>
+                            <button className='answerButton' choice='B'>B. {optionB}</button>
+                            <button className='answerButton' choice='C'>C. {optionC}</button>
+                            <button className='answerButton' choice='D'>D. {optionD}</button>
                         </div>
                     </div>
-                </div>
             }
-                {/* Card Back */}
-                {flipped &&
-                <div className="cardBack">
-                <h2>"2077"</h2>
+            {/* Card Back */}
+            {flipped &&
+                <div className="card">
+                    <div className="cardBack">
+                            <p>{question}</p>
+                            <button className='answerButton' choice='A'>A. {optionA}</button>
+                            <button className='answerButton' choice='B'>B. {optionB}</button>
+                            <button className='answerButton' choice='C'>C. {optionC}</button>
+                            <button className='answerButton' choice='D'>D. {optionD}</button>
+                    </div>
                 </div>
                 }
         </div>

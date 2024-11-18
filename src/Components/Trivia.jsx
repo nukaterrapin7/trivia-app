@@ -2,43 +2,40 @@ import { useState } from "react";
 
 function Trivia({question, optionA, optionB, optionC, optionD}){
      
-    const [flipped, setFlipped] = useState(false)
+    const [answered, setAnswered] = useState(false)
 
     function handleClick() {
-        setFlipped(!flipped)
-        console.log(flipped)
+        setAnswered(!answered)
+        console.log(answered)
     }
 
     return (
-        <div 
-        onClick={()=>{handleClick()}}
-        className="cardContainer">
-            {/* Card Front */}
-            {!flipped &&
-                <div className="card">
-                    <div className="cardFront">
-                            <p>{question}</p>
-                            <button className='answerButton' choice='A'>A. {optionA}</button>
-                            <button className='answerButton' choice='B'>B. {optionB}</button>
-                            <button className='answerButton' choice='C'>C. {optionC}</button>
-                            <button className='answerButton' choice='D'>D. {optionD}</button>
-                        </div>
-                    </div>
-            }
-            {/* Card Back */}
-            {flipped &&
-                <div className="card">
-                    <div className="cardBack">
-                            <p>{question}</p>
-                            <button className='answerButton' choice='A'>A. {optionA}</button>
-                            <button className='answerButton' choice='B'>B. {optionB}</button>
-                            <button className='answerButton' choice='C'>C. {optionC}</button>
-                            <button className='answerButton' choice='D'>D. {optionD}</button>
-                    </div>
-                </div>
+        <div className="card">
+            <div className="card-top">
+                <p>{question}</p>
+            </div>
+            <div 
+            onClick={()=>{handleClick()}}
+            className="cardBottom">
+                {!answered && 
+                    <>
+                        <button className='answerButton' choice='A'>A. {optionA}</button>
+                        <button className='answerButton' choice='B'>B. {optionB}</button>
+                        <button className='answerButton' choice='C'>C. {optionC}</button>
+                        <button className='answerButton' choice='D'>D. {optionD}</button>
+                    </>
                 }
+                {answered &&
+                    <div className="answers">
+                        <div className='answerDisplay' choice='A'>A. {optionA}</div>
+                        <div className='answerDisplay' choice='B'>B. {optionB}</div>
+                        <div className='answerDisplay' choice='C'>C. {optionC}</div>
+                        <div className='answerDisplay' choice='D'>D. {optionD}</div>
+                    </div>
+                    }
+            </div>
         </div>
-    )
+        )
 }
 
 export default Trivia

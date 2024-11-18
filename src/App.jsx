@@ -74,9 +74,9 @@ function App() {
         <h1>Fallout Trivia</h1>
         <p>Do you know what makes you S.P.E.C.I.A.L.?</p>
       </div>
-      {questions.map((question) => {
+      {questions.map((question, index) => {
         return (
-          <Trivia key={question} question={questions.question} optionA="2075" optionB="2080" optionC="2077" optionD="2100"/>
+          <Trivia key={index} question={question.question} optionA={question.optionA} optionB={question.optionB} optionC={question.optionC}optionD={question.optionD}/>
         )
       })}
       <div className='scrollButtons'>

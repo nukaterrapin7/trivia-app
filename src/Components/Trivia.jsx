@@ -1,12 +1,18 @@
 import { useState } from "react";
 
-function Trivia({question, optionA, optionB, optionC, optionD}){
+function Trivia({question, optionA, optionB, optionC, optionD, correctAnswer}){
      
-    const [answered, setAnswered] = useState(false)
+    const [answered, setAnswered] = useState(false);
+    // const [isDisabled, setIsDisabled] = useState(false);
 
     function handleClick() {
         setAnswered(!answered)
         console.log(answered)
+        // if (optionA === correctAnswer) {
+        //     <div className="correct"></div>
+        // } else {
+        //     <div className="incorrect"></div>
+        // }
     }
 
     return (
@@ -19,23 +25,58 @@ function Trivia({question, optionA, optionB, optionC, optionD}){
             className="cardBottom">
                 {!answered && 
                     <>
-                        <button className='answerButton' choice='A'>A. {optionA}</button>
-                        <button className='answerButton' choice='B'>B. {optionB}</button>
-                        <button className='answerButton' choice='C'>C. {optionC}</button>
-                        <button className='answerButton' choice='D'>D. {optionD}</button>
+                        <button className='answerButton'>A. {optionA}</button>
+                        <button className='answerButton'>B. {optionB}</button>
+                        <button className='answerButton'>C. {optionC}</button>
+                        <button className='answerButton'>D. {optionD}</button>
+                        {/* <button className='correct'>Answer: {correctAnswer}</button> */}
                     </>
                 }
                 {answered &&
                     <div className="answers">
-                        <div className='answerDisplay' choice='A'>A. {optionA}</div>
-                        <div className='answerDisplay' choice='B'>B. {optionB}</div>
-                        <div className='answerDisplay' choice='C'>C. {optionC}</div>
-                        <div className='answerDisplay' choice='D'>D. {optionD}</div>
+                        {/* <div onClick={handleClick} disabled={isDisabled}></div> */}
+                        <div className='answerDisplay'>A. {optionA}</div>
+                        <div className='answerDisplay'>B. {optionB}</div>
+                        <div className='answerDisplay'>C. {optionC}</div>
+                        <div className='answerDisplay'>D. {optionD}</div>
+                        <div className='correct'>Answer: {correctAnswer}</div>
                     </div>
-                    }
+                }
             </div>
         </div>
         )
+    // const [selectedAnswer, setSelectedAnswer] = useState(null);
+    // const [isAnswerCorrect, setIsAnswerCorrect] = useState(null);
+
+    // const handleAnswerClick = (option) => {
+    //     setSelectedAnswer(option);
+    //     setIsAnswerCorrect(option === questions.correctAnswer);
+    // };
+
+    // return (
+    //     <div>
+    //         <h2>{questions.question}</h2>
+    //         <ul>
+    //             {questions.options.map((option, index) => (
+    //                 <li
+    //                     key={index}
+    //                     onClick={() => handleAnswerClick(option)}
+    //                     style={{
+    //                         backgroundColor: selectedAnswer === option
+    //                             ? isAnswerCorrect ? 'green' : 'red'
+    //                             : 'white'
+    //                     }}
+    //                 >
+    //                     {option}
+    //                 </li>
+    //             ))}
+    //         </ul>
+    //         {selectedAnswer && (
+    //             <p>{isAnswerCorrect ? "Correct!" : "Incorrect!"}</p>
+    //         )}
+    //     </div>
+    // )
 }
+
 
 export default Trivia

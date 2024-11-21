@@ -96,3 +96,5 @@ export default App
 // Cannot get the correct answer to show when flipping the card, and show a color to show if the answer was right or not.
 // Cannot get the Scroll Buttons to control the card, only the strigified text.
 // Cannot get the back of the card to not flip back.
+
+// Testing adding Git back on

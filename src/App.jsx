@@ -77,7 +77,7 @@ function App() {
       </div>
       {questions.slice(0,1).map((question, index) => {
         return (
-          <Trivia key={index} question={question.question} optionA={question.optionA} optionB={question.optionB} optionC={question.optionC}optionD={question.optionD} answer={question.correctAnswer}/>
+          <Trivia key={index} question={question.question} optionA={question.optionA} optionB={question.optionB} optionC={question.optionC}optionD={question.optionD} correctAnswer={question.correctAnswer}/>
         )
       })}
       <div className='scrollButtons'>

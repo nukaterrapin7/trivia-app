@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Trivia from './Trivia'
 
 
 function Scroll({ questions }) {
@@ -35,7 +34,6 @@ function Scroll({ questions }) {
     return (
         <div>
           <pre>{JSON.stringify(currentQuestion, null, 2)}</pre>
-          <Trivia key={index} question={question.question} optionA={question.optionA} optionB={question.optionB} optionC={question.optionC}optionD={question.optionD} answer={question.correctAnswer}/>
           <button onClick={handlePrevious}>Previous</button>
           <button onClick={handleNext}>Next</button>
         </div>

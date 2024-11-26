@@ -4,9 +4,9 @@ import Trivia from './Components/Trivia'
 import Scroll from './Components/Scroll'
 
 const questions = [
-{question:"What year did the bombs drop?", 
-  options: ["2075", "2080", "2077", "2100"],
-  correctAnswer:"2077"},
+  // {question:"What year did the bombs drop?", 
+//   options: ["2075", "2080", "2077", "2100"],
+//   correctAnswer:"2077"},
 {question:"What is arguably the most iconic quote from Fallout?", optionA:"Death is a preferable alternative to communism.", optionB:"I don't want to set the world on fire.", optionC:"War never changes", optionD:"It's the end of the world, all over again"},
 {question:"What is the New common Currency used in fallout?", optionA:"Ammo", optionB:"NCR dollars", optionC:"Nuka Cola", optionD:"Caps"},  
 {question:"What is the G.O.A.T.?", optionA:"An experimental weapon", optionB:"A Vault-Tec test to determine a residents job", optionC:"A Vault-Tec test to determine a residents income", optionD:"A Vault-Tec test to determine a residents morals"},

@@ -15,6 +15,7 @@
   padding: 20px;
   justify-content: center;
   border-radius: 10px;
+  height: auto;
 }
 
 /* .cardTop {} */
@@ -60,7 +61,7 @@
 
 .answerButton:hover {
   background-color: rgb(8, 241, 8);
-  border: 3px solid rgb(8, 241, 8);
+  border-color: black;
 }
 
 .answerButton:active {

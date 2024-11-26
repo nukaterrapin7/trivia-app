@@ -10,6 +10,9 @@ function Trivia({question, optionA, optionB, optionC, optionD, correctAnswer}){
         setAnswered(!answered)
         console.log(answered)
     }
+
+    function reveal(answerButton, answerDisplay) {
+    }
       
     return (
         <div className="card">

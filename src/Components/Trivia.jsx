@@ -59,14 +59,19 @@ function Trivia({ questions }) {
     return (
         <div className="card">
             <div className="card-top">
+                <p>Question {currentIndex +1} of {questions.length}</p>
                 <p>{currentQuestion.question}</p>
             </div>
             <div className="cardBottom">
                 {renderOptions()}
             </div>
             <div>
-                <button onClick={handlePrevious}>Previous</button>
-                <button onClick={handleNext}>Next</button>
+                {currentIndex > 0 && (
+                    <button onClick={handlePrevious}>Previous</button>
+                )}
+                {currentIndex < questions.length -1 && (
+                    <button onClick={handleNext}>Next</button>
+                )}
             </div>
         </div>
     )

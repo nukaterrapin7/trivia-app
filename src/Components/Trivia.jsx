@@ -1,23 +1,37 @@
 import { useState } from "react";
+import Score from './Score';
+import ProgressBar from "./Progress/Progress";
+import EndScreen from "./EndScreen/EndScreen";
 
 function Trivia({ questions }) {
     const [answered, setAnswered] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [selectedAnswer, setSelectedAnswer] = useState(null);
     const currentQuestion = questions[currentIndex];
+    const [score, setScore] = useState(0);
 
     const handleAnswerClick = (selectedOption) => {
         console.log('Selected: ${selectedOption}');
         setSelectedAnswer(selectedOption);
         setAnswered(true);
+        if (selectedOption === currentQuestion.correctAnswer) {
+            setScore((prevScore) => prevScore + 1);
+        } else {
+            setScore((prevScore) => prevScore - 1);
+        };
+    
     };
 
     const handleNext = () => {
-        setAnswered(false);
-        setSelectedAnswer(null);
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % questions.length);
+        if (currentIndex < questions.length - 1) {
+            setAnswered(false);
+            setSelectedAnswer(null);
+            setCurrentIndex((prevIndex) => prevIndex + 1);
+        } else {
+            setCurrentIndex((prevIndex) => prevIndex + 1);
+        }
     };
-
+    
     const handlePrevious = () => {
         setAnswered(false);
         setSelectedAnswer(null);
@@ -25,7 +39,13 @@ function Trivia({ questions }) {
           prevIndex === 0 ? questions.length - 1 : prevIndex - 1
         );
       };    
-    
+
+    const handleRestartQuiz = () => {
+        setScore(0);
+        setCurrentIndex(0);
+        setAnswered(false);
+    };
+
     const renderOptions = () => {
         const options = ["A", "B", "C", "D"];
         return options.map((opt) => {
@@ -55,29 +75,31 @@ function Trivia({ questions }) {
         });
     };
     
-    
-    return (
-        <div className="card">
-            <div className="card-top">
-                <p>Question {currentIndex +1} of {questions.length}</p>
-                <p>{currentQuestion.question}</p>
+    return currentIndex === questions.length ? (
+        <EndScreen score={score} total={questions.length} onRestart={handleRestartQuiz} />
+    ) : (
+        <>
+            <Score score={score} />
+            <p>Question {currentIndex +1} of {questions.length}</p>
+            <ProgressBar current={currentIndex + 1} total={questions.length} />
+            <div className="card">
+                <div className="card-top">
+                    <p>{currentQuestion.question}</p>
+                </div>
+                <div className="cardBottom">
+                    {renderOptions()}
+                </div>
+                <div>
+                    {currentIndex > 0 && (
+                        <button onClick={handlePrevious}>Previous</button>
+                    )}
+                    {currentIndex < questions.length && (
+                        <button onClick={handleNext}>Next</button>
+                    )}
+                </div>
             </div>
-            <div className="cardBottom">
-                {renderOptions()}
-            </div>
-            <div>
-                {currentIndex > 0 && (
-                    <button onClick={handlePrevious}>Previous</button>
-                )}
-                {currentIndex < questions.length -1 && (
-                    <button onClick={handleNext}>Next</button>
-                )}
-            </div>
-        </div>
+        </>
     )
 }                    
-
-
-// style={{ display: index == activeIndex ? "block" : "none" }}
 
 export default Trivia

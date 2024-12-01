@@ -1,8 +1,18 @@
-# React + Vite
+# This is a small trivia app for the game series, Fallout.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+It wil lask you 28 questions about the wasteland, and the people, places, and other things in it!
 
-Currently, two official plugins are available:
+# Home Page
+![](public/Trivia Screenshot 1.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+It will let you know if the answer that you selected was corect or incorrect, and will keep track of your progrerss through the questions, and even keep score on how many questions you got right!
+
+![](public/Trivia Screenshot 2.png)
+![](public/Trivia Screenshot 3.png)
+
+At the end of the questions, it will give you the final score, and let you restart the Quiz from the beginning.
+
+![](public/Trivia Screenshot 4.png)
+
+# Technology used:
+- React

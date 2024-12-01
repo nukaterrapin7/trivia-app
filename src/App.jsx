@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import Trivia from './Components/Trivia'
 
@@ -173,26 +172,16 @@ const questions = [
   correctAnswer:"Sunset Sarsaparilla"}
 ]
 
-
-
 function App() {
 
   return (
-    <>
       <div className='main'>
         {/* <img src='../public/Fallout Logo.png'></img> */}
         <h1>Fallout Trivia</h1>
-        <p>Do you know what makes you S.P.E.C.I.A.L.?</p>
+        <h2>Do you know what makes you S.P.E.C.I.A.L.?</h2>
+        <Trivia questions={questions} />
       </div>
-      <Trivia questions={questions} />
-    </>
   )
 }
 
 export default App
-
-
-
-
-// Having trouble with the following:
-// Cannot get the correct answer to show a color to show if the answer was right or not.

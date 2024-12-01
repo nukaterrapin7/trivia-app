@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Score from './Score';
+import Score from './Score/Score';
 import ProgressBar from "./Progress/Progress";
 import EndScreen from "./EndScreen/EndScreen";
 
@@ -80,10 +80,10 @@ function Trivia({ questions }) {
     ) : (
         <>
             <Score score={score} />
-            <p>Question {currentIndex +1} of {questions.length}</p>
+            <h3>Question {currentIndex +1} of {questions.length}</h3>
             <ProgressBar current={currentIndex + 1} total={questions.length} />
             <div className="card">
-                <div className="card-top">
+                <div className="cardTop">
                     <p>{currentQuestion.question}</p>
                 </div>
                 <div className="cardBottom">

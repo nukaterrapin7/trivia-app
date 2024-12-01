@@ -5,6 +5,18 @@
   text-align: center;
 }
 
+body {
+  background-image: url('Vault Boy Wallpaper.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main {
+  color: black;
+  background-color: rgb(8, 241, 8, 0.5);
+  border-radius: 10px;
+}
+
 .card {
   background-color: blue;
   display: flex;
@@ -18,7 +30,10 @@
   height: auto;
 }
 
-/* .cardTop {} */
+.cardTop {
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: white;
+}
 
 .cardBottom {
   display: flex;

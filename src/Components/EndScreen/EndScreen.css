@@ -8,24 +8,27 @@
 
 .end-screen h1 {
     font-size: 2rem;
-    color: #333;
+    color: white;
 }
 
 .end-screen p {
     font-size: 1.2rem;
     margin: 15px 0;
+    color: white;
 }
 
 .restart-button {
     padding: 10px 20px;
     font-size: 1rem;
-    background-color: #cfe738;
+    background-color: yellow;
     color: black;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;    
+    border: 3px solid rgb(8, 241, 8);
     cursor: pointer;
 }
 
 .restart-button:hover {
-    background-color: #cfe737;
-}
+    background-color: rgb(8, 241, 8);
+    border-color: black;
+  }
